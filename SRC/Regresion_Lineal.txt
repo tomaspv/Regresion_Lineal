@@ -1,2 +1,0 @@
-# Importamos librerias con las que vamos a trabajar
-import numpy as np
