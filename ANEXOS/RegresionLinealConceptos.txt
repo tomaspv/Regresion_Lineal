@@ -1,0 +1,62 @@
+Regresion lineal simple
+El objetivo del Análisis de regresión es determinar una función matemática sencilla que describa el comportamiento de una variable dados los valores de otra variable. En el Análisis de regresión simple, se pretende estudiar y explicar el comportamiento de una variable que notamos y, y que llamaremos variable explicada, variable dependiente o variable de interés, a partir de otra variable, que notamos x, y que llamamos variable explicativa, variable independiente o variable de predicción. El principal objetivo de la regresión es encontrar la función que mejor explique la relación entre la variable dependiente y las independientes.
+
+Teoría de la Regresión: Consiste en la búsqueda de una “función” que exprese lo mejor posible el tipo de relación entre dos o más variables.
+
+Caracteristicas generales del algoritmo:
+*Y = B0 + B1 * X
+	Donde
+		Y
+			Variable dependiente
+		X
+			Variable independiente
+		B0
+			Ordenada al origen
+			Es el valor que calcula el algoritmo cuando X=0
+		B1
+			Variable que afecta a la variable independiente
+			Es el valor que calcula el algoritmo
+	
+*La idea del algoritmo es demostrar la correlacion que existe entre dos variables, y en base a ella estimar cual sera su valor en el futuro.
+*Es necesario separar el data set en dos partes, una parte para entrenar el modelo y otra para probar el modelo.
+*Es un algoritmo que su ejecucion se realiza de forma rapida.
+*Los resultados que arroja son faciles de interpretar.
+
+
+Tips para utilizar a la hora de aplicar el algoritmo:
+*Realizar un diagrama de dispersion a fin de observar si existe a priori una correlacion entre las variables que facilite el trabajo. En caso de que en el diagrama de dispersión se aprecie un patrón lineal entre las dos variables, se podrá asumir una cierta relación lineal entre ambas variables y se procederá a ajustar el modelo de regresión lineal simple.
+
+Tips para evaluar un modelo de regresion lineal:
+*mean_squared_error
+	
+*mean_absolute_error
+	
+*explained_variance_score
+	explained_variance_score(y_true, y_pred) 
+	The best possible score is 1.0, lower values are worse.
+	Evalua la calidad de la regresion como asi tambien la distribucion de las variables dependientes.
+
+	
+*r2_score.
+	
+
+Bibliografia:
+*http://wpd.ugr.es/~bioestad/guia-de-r/practica-3/ [Recomendado! Utiliza el lenguaje R para desarrollar la implementacion del algoritmo]
+*http://scikit-learn.org/stable/modules/model_evaluation.html#r2-score-the-coefficient-of-determination [Para entender como evaluar un modelo de regresion]
+
+
+
+README
+
+# Regresion_Lineal|
+
+- **Tema**: Regresion Lineal
+- **Lenguaje utilizado**: Python
+- **Dataset**:
+  - Wine Data Set - Data set Analisis quimicos de vinos que crecieron en una region de Italia. `Source: Fuente: http://archive.ics.uci.edu/ml/datasets/Wine`
+- **Comentarios**: Utilizando el algoritmo de machine learning de Regresion Lineal vamos a calcular a partir del nivel de alcohol del vino, el color que posee.
+- **Estructura del proyecto**:
+  - **SRC**: Carpeta con la codificacion del proyecto.
+  - **DOC**: Carpeta que contendra el analisis funcional sobre el proyecto llevado a cabo.
+  - **ANEXOS**: Carpeta que contendra todo archivo de interes relacionado al proyecto.
+  - **DATSET**: Carpeta que contendra el dataset utilizado para llevar a cabo el proyecto.
