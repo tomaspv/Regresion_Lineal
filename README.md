@@ -1,4 +1,4 @@
-# Regresion_Lineal|
+# Regresion_Lineal
 
 - **Tema**: Regresion Lineal
 - **Lenguaje utilizado**: Python
