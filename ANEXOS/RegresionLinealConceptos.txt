@@ -8,8 +8,10 @@ Caracteristicas generales del algoritmo:
 	Donde
 		Y
 			Variable dependiente
+			Conocido como Predictando
 		X
 			Variable independiente
+			Conocido como Predictor
 		B0
 			Ordenada al origen
 			Es el valor que calcula el algoritmo cuando X=0
@@ -27,36 +29,57 @@ Tips para utilizar a la hora de aplicar el algoritmo:
 *Realizar un diagrama de dispersion a fin de observar si existe a priori una correlacion entre las variables que facilite el trabajo. En caso de que en el diagrama de dispersión se aprecie un patrón lineal entre las dos variables, se podrá asumir una cierta relación lineal entre ambas variables y se procederá a ajustar el modelo de regresión lineal simple.
 
 Tips para evaluar un modelo de regresion lineal:
-*mean_squared_error
-	
+Observacion: Esto aplica para variables del tipo CONTINUAS.
+The sklearn.metrics module implements several loss, score, and utility functions to measure regression performance. Some of those have been enhanced to handle the multioutput case: mean_squared_error, mean_absolute_error, explained_variance_score and r2_score. [http://scikit-learn.org/stable/modules/model_evaluation.html#r2-score-the-coefficient-of-determination]
+
+MAE VS MSE --> [https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d]
+
 *mean_absolute_error
+	mean_absolute_error(y_true, y_pred)
+	Es la diferencia entre dos varriables continuas.
+	Lo podemos pensar como la comparacion entre lo predicho y lo observado realmente.
+
+*mean_squared_error
+	mean_square_error(y_true, y_pred)
+	Es como el mean_absolute_error pero al cuadrado. La diferencia con MAE es que al error le da mas peso.
 	
 *explained_variance_score
 	explained_variance_score(y_true, y_pred) 
 	The best possible score is 1.0, lower values are worse.
 	Evalua la calidad de la regresion como asi tambien la distribucion de las variables dependientes.
+	Es una medida de dispersion de los datos que estoy analizando.
 
 	
 *r2_score.
+	Tambien conocido como coeficiente de determinacion.
+	Se lo puede razonar como la proporcion de la varianza de la variable dependiente "Y" que es predicha por la o las variables independientes "X"
+	It provides a measure of how well observed outcomes are replicated by the model, based on the proportion of total variation of outcomes explained by the model
 	
+
++Conceptos importantes:
+	Como calcular tstudent y pvalue
+		https://stackoverflow.com/questions/27928275/find-p-value-significance-in-scikit-learn-linearregression
+
+	Definiciones sobre pvalue
+		http://www.dummies.com/education/math/statistics/what-a-p-value-tells-you-about-statistical-data/
+		https://statssos.net/2014/11/21/es-significativo-que-es-eso-la-estadistica-inferencial/
+		https://www.edvancer.in/step-step-guide-to-execute-linear-regression-python/
+
+	Definiciones sobre tstudent
+		http://blog.minitab.com/blog/statistics-and-quality-data-analysis/what-are-t-values-and-p-values-in-statistics
+
+
+	Tstudent
+		Mientras mayor sea el valor de T, hay mas chances de rechazar la hipotesis nula (Las variables no poseen ninguna relacion) entonces diremos que mientras mayor sea, las variables van a poseer mayor relacion entre si en los datos. Ahora bien, si el valor de T se acerca a cero diremos que no habra una relacion significativa. 	
+
+	Pvalue
+		Se rechaza la hipótesis nula si el valor de p asociado al resultado observado es igual o menor que el nivel de significación establecido, convencionalmente 0,05 ó 0,01.
+		El valor p es el nivel de significancia más bajo al que puede rechazarse la hipótesis nula.
+			– El valor p toma valores entre 0 y 1
+			– Si: valor p < nivel de signif. (5%) => Rechaza Ho
+		A p-value is the probability that the results from your sample data occurred by chance. P-values are from 0% to 100%. They are usually written as a decimal. For example, a p value of 5% is 0.05. Low p-values are good; They indicate your data did not occur by chance. For example, a p-value of .01 means there is only a 1% probability that the results from an experiment happened by chance. In most cases, a p-value of 0.05 (5%) is accepted to mean the data is valid.
+
 
 Bibliografia:
 *http://wpd.ugr.es/~bioestad/guia-de-r/practica-3/ [Recomendado! Utiliza el lenguaje R para desarrollar la implementacion del algoritmo]
 *http://scikit-learn.org/stable/modules/model_evaluation.html#r2-score-the-coefficient-of-determination [Para entender como evaluar un modelo de regresion]
-
-
-
-README
-
-# Regresion_Lineal|
-
-- **Tema**: Regresion Lineal
-- **Lenguaje utilizado**: Python
-- **Dataset**:
-  - Wine Data Set - Data set Analisis quimicos de vinos que crecieron en una region de Italia. `Source: Fuente: http://archive.ics.uci.edu/ml/datasets/Wine`
-- **Comentarios**: Utilizando el algoritmo de machine learning de Regresion Lineal vamos a calcular a partir del nivel de alcohol del vino, el color que posee.
-- **Estructura del proyecto**:
-  - **SRC**: Carpeta con la codificacion del proyecto.
-  - **DOC**: Carpeta que contendra el analisis funcional sobre el proyecto llevado a cabo.
-  - **ANEXOS**: Carpeta que contendra todo archivo de interes relacionado al proyecto.
-  - **DATSET**: Carpeta que contendra el dataset utilizado para llevar a cabo el proyecto.
